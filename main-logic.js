@@ -19,4 +19,14 @@ function getComputerChoice () {
     }
 
 }
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
+
+// Human Choice 
+
+
+let getHumanChoice = () => {
+    let humanChoice = prompt("What is your Choice?");
+    humanChoice = humanChoice.toLowerCase();
+    return humanChoice
+}
+ console.log(getHumanChoice());
