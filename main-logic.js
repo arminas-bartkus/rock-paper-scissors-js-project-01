@@ -1,6 +1,9 @@
 let humanScore = 0;
 let computerScore = 0;
 let humanWon = false;
+    
+let currentGame = 0;
+const maxGames = 5;
 
 // Computer Choice
 function getComputerChoice() {
@@ -22,12 +25,11 @@ function getComputerChoice() {
 }
 
 // Human Choice 
-
-    function getHumanChoice() {
+let getHumanChoice = () => {
     let humanChoice = prompt("What is your Choice?");
     humanChoice = humanChoice.toLowerCase();
     return humanChoice
-    }
+}
 // One round of Rock paper scissors
 function playround(humanChoice, computerChoice) {
 
@@ -39,33 +41,27 @@ function playround(humanChoice, computerChoice) {
     else if (humanChoice == "rock") {
 
             if (computerChoice == "scissors"){
-            ++humanScore
             humanWon = true;
         }
             else {
-            ++computerScore
             humanWon = false;
         }
     }
     else if (humanChoice == "scissors") {
 
             if (computerChoice == "paper") {
-            ++humanScore
             humanWon = true;
         }
             else {
-            ++computerScore
             humanWon = false;
         }
         }
     else if (humanChoice == "paper") {
 
             if (computerChoice == "rock") {
-            ++humanScore
             humanWon = true;
         }
             else {
-            ++computerScore
             humanWon = false;
         }
 
@@ -73,25 +69,29 @@ function playround(humanChoice, computerChoice) {
 
     if (humanWon === true) {
                 console.log("You Win! " + humanChoice + " beats " + computerChoice);
-        }
+                ++humanScore        
+            }
 
     else {
                 console.log("You Lose! " + computerChoice + " beats " + humanChoice);
-        }
+                ++computerScore
+            }       
         
 
-    }
+}
 
-    // 5 games total logic
-    let currentGame = 0;
-    const maxGames = 5;
-
-    for (currentGame; currentGame < maxGames; currentGame++) {
+// 5 games total logic
+for (currentGame; currentGame < maxGames; currentGame++) {
 
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
 
         playround(humanChoice, computerChoice[1]);
-    }
+}
+
+let winnerMessage = (humanScore == computerScore) ? ("It's a draw with " + humanScore + " point(s) each") :
+        humanScore < computerScore ? ("The computer wins with " + computerScore + " points") :
+        humanScore > computerScore ? ("The human wins with " + humanScore + " points") : null;
 
 
+console.log(winnerMessage);

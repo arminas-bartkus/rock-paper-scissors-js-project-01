@@ -14,3 +14,22 @@ pseudocode, functions, and logic. As well as
 this, I will likely be participating in my
 first set of error handling using the 
 google dev tools.
+
+This project is now complete, currently,
+there are no GUI elements to it. The
+program is comprised of 3 functions and 
+a for loop. 
+
+The functions: 
+- Create a random choice for the computer
+- prompts the user for an input
+- Calculates the winner, displaying a
+message every round, and keeps track
+of player and computer points
+
+The for loop:
+- Iterates 5 times running through 
+each function in each cycle.
+
+At the end a message a displayed,
+with the winners score and identifer!
