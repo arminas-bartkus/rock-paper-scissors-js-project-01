@@ -1,8 +1,8 @@
 let humanScore = 0;
 let computerScore = 0;
+let humanWon = false;
 
 // Computer Choice
-
 function getComputerChoice() {
     
     let initialRandomNumber = Math.floor((Math.random())*100); 
@@ -20,33 +20,20 @@ function getComputerChoice() {
     }
 
 }
-getComputerChoice();
 
 // Human Choice 
 
-
-let getHumanChoice = () => {
+    function getHumanChoice() {
     let humanChoice = prompt("What is your Choice?");
     humanChoice = humanChoice.toLowerCase();
     return humanChoice
-
-}
-let humanWon = false;
-
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-
-playround(humanChoice, computerChoice[1]);
-
+    }
 // One round of Rock paper scissors
-
 function playround(humanChoice, computerChoice) {
 
     if (humanChoice == computerChoice) {
         console.log("Draw, you both picked " + humanChoice)
-        ++humanScore
-        ++computerScore
-
+        return
     }
 
     else if (humanChoice == "rock") {
@@ -84,13 +71,27 @@ function playround(humanChoice, computerChoice) {
 
         }
 
-        if (humanWon === true) {
+    if (humanWon === true) {
                 console.log("You Win! " + humanChoice + " beats " + computerChoice);
         }
 
-        else {
+    else {
                 console.log("You Lose! " + computerChoice + " beats " + humanChoice);
         }
         
 
     }
+
+    // 5 games total logic
+    let currentGame = 0;
+    const maxGames = 5;
+
+    for (currentGame; currentGame < maxGames; currentGame++) {
+
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+
+        playround(humanChoice, computerChoice[1]);
+    }
+
+
