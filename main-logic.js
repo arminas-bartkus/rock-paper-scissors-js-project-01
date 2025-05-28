@@ -31,6 +31,7 @@ let getHumanChoice = () => {
     return humanChoice
 
 }
+let humanWon = false;
 
 let humanChoice = getHumanChoice();
 let computerChoice = getComputerChoice();
@@ -42,35 +43,54 @@ playround(humanChoice, computerChoice[1]);
 function playround(humanChoice, computerChoice) {
 
     if (humanChoice == computerChoice) {
-        console.log("Draw, you both picked " + humanChoice + computerChoice)
+        console.log("Draw, you both picked " + humanChoice)
+        ++humanScore
+        ++computerScore
+
     }
 
     else if (humanChoice == "rock") {
 
             if (computerChoice == "scissors"){
-            console.log("You Win! " + humanChoice + " beats " + computerChoice);
+            ++humanScore
+            humanWon = true;
         }
             else {
-            console.log("You Lose! " + computerChoice + " beats " + humanChoice);
+            ++computerScore
+            humanWon = false;
         }
     }
     else if (humanChoice == "scissors") {
 
             if (computerChoice == "paper") {
-            console.log("You Win! " + humanChoice + " beats " + computerChoice);
+            ++humanScore
+            humanWon = true;
         }
             else {
-            console.log("You Lose! " + computerChoice + " beats " + humanChoice);
+            ++computerScore
+            humanWon = false;
         }
         }
     else if (humanChoice == "paper") {
 
             if (computerChoice == "rock") {
-            console.log("You Win! " + humanChoice + " beats " + computerChoice);
+            ++humanScore
+            humanWon = true;
         }
             else {
-            console.log("You Lose! " + computerChoice + " beats " + humanChoice);
+            ++computerScore
+            humanWon = false;
         }
 
         }
+
+        if (humanWon === true) {
+                console.log("You Win! " + humanChoice + " beats " + computerChoice);
+        }
+
+        else {
+                console.log("You Lose! " + computerChoice + " beats " + humanChoice);
+        }
+        
+
     }
