@@ -1,5 +1,8 @@
 # rock-paper-scissors-js-project-01
 
+**THIS PROJECT IS ODIN PROJECT TRAINING
+EXERCISE**
+
 Here is my first Javascript Project! This is
 initially a console based game of rock paper
 scissors. When run the computer will choose, 
