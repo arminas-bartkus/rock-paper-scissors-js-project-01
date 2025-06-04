@@ -1,10 +1,13 @@
 let humanScore = 0;
 let computerScore = 0;
 let humanWon = false;
-    
+
 let currentGame = 0;
 const maxGames = 5;
 
+
+
+let value = "";
 // Computer Choice
 function getComputerChoice() {
     
@@ -24,44 +27,50 @@ function getComputerChoice() {
 
 }
 
-const rockBtn = document.querySelector("#rock");
-const paperBtn = document.querySelector("#paper");
-const scissorsBtn = document.querySelector("#scissors")
-let btnContainer = document.querySelector("#container")
+btnContainer = document.querySelector("#container");
+let rockBtn = document.querySelector("#rock");
+let paperBtn = document.querySelector("#paper");
+let scissorsBtn = document.querySelector("#scissors");
+
+btnContainer.addEventListener("click", function (event) {
+
+        let target = event.target;
+        computerChoice = getComputerChoice()
+        computerChoice = computerChoice[1];
+
+        switch (target.id) {
+            case "rock": playround(target.id, computerChoice);
+            break   
+            case "paper": playround(target.id, computerChoice);
+            break
+            case "scissors": playround(target.id, computerChoice);
+            break
+        }
 
 
-btnContainer.addEventListener('click', function(event) {
+        // switch (target.id) {
+        //     case humanChoice = "rock":
+        //         return humanChoice
+        //     case humanChoice = "paper":
+        //         break
+        //     case humanChoice = "scissors":
+        //         break
+        // }
     
-console.log(event);
-
-    // let target = event.target;
-
-    switch(target.id) {
-        case "rock":
-            console.log("Rock picked");
-            break
-        case "paper":
-            console.log("Paper picked");
-            break
-        case "scissors":
-            console.log("Scissors");
-            break
-            
-    }
-
-});
-
+    
+    });
 
 
 // Human Choice 
-// let getHumanChoice = () => {
-//     let humanChoice = prompt("Rock, Paper, or Scissors?");
-//     humanChoice = humanChoice.toLowerCase();
+// let getHumanChoice = (str) => {
+
+//     let humanChoice = str;
 //     return humanChoice
 // }
 
 // One round of Rock paper scissors
 function playround(humanChoice, computerChoice) {
+
 
     if (humanChoice == computerChoice) {
         console.log("Draw, you both picked " + humanChoice)
@@ -110,18 +119,18 @@ function playround(humanChoice, computerChoice) {
 
 }
 
-// // 5 games total logic
-// for (currentGame; currentGame < maxGames; currentGame++) {
+// // // 5 games total logic
+// // for (currentGame; currentGame < maxGames; currentGame++) {
 
-//         let humanChoice = getHumanChoice();
-//         let computerChoice = getComputerChoice();
+// //         let humanChoice = getHumanChoice();
+// //         let computerChoice = getComputerChoice();
 
-//         playround(humanChoice, computerChoice[1]);
-// }
+// //         playround(humanChoice, computerChoice[1]);
+// // }
 
-let winnerMessage = (humanScore == computerScore) ? ("It's a draw with " + humanScore + " point(s) each") :
-        humanScore < computerScore ? ("The computer wins with " + computerScore + " points") :
-        humanScore > computerScore ? ("The human wins with " + humanScore + " points") : null;
+// let winnerMessage = (humanScore == computerScore) ? ("It's a draw with " + humanScore + " point(s) each") :
+//         humanScore < computerScore ? ("The computer wins with " + computerScore + " points") :
+//         humanScore > computerScore ? ("The human wins with " + humanScore + " points") : null;
 
 
-console.log(winnerMessage);
+// console.log(winnerMessage);
