@@ -24,12 +24,42 @@ function getComputerChoice() {
 
 }
 
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors")
+let btnContainer = document.querySelector("#container")
+
+
+btnContainer.addEventListener('click', function(event) {
+    
+console.log(event);
+
+    // let target = event.target;
+
+    switch(target.id) {
+        case "rock":
+            console.log("Rock picked");
+            break
+        case "paper":
+            console.log("Paper picked");
+            break
+        case "scissors":
+            console.log("Scissors");
+            break
+            
+    }
+
+});
+
+
+
 // Human Choice 
-let getHumanChoice = () => {
-    let humanChoice = prompt("Rock, Paper, or Scissors?");
-    humanChoice = humanChoice.toLowerCase();
-    return humanChoice
-}
+// let getHumanChoice = () => {
+//     let humanChoice = prompt("Rock, Paper, or Scissors?");
+//     humanChoice = humanChoice.toLowerCase();
+//     return humanChoice
+// }
+
 // One round of Rock paper scissors
 function playround(humanChoice, computerChoice) {
 
@@ -80,14 +110,14 @@ function playround(humanChoice, computerChoice) {
 
 }
 
-// 5 games total logic
-for (currentGame; currentGame < maxGames; currentGame++) {
+// // 5 games total logic
+// for (currentGame; currentGame < maxGames; currentGame++) {
 
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
+//         let humanChoice = getHumanChoice();
+//         let computerChoice = getComputerChoice();
 
-        playround(humanChoice, computerChoice[1]);
-}
+//         playround(humanChoice, computerChoice[1]);
+// }
 
 let winnerMessage = (humanScore == computerScore) ? ("It's a draw with " + humanScore + " point(s) each") :
         humanScore < computerScore ? ("The computer wins with " + computerScore + " points") :
