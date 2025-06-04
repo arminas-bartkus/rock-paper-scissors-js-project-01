@@ -1,0 +1,80 @@
+body {
+    font-family:monospace;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(75, 192, 173, 0.63);
+    border: 0px;
+    margin: 0px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+    height: 300px;
+    min-width: 500px;
+   
+    
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0, 1, auto;
+    margin: 20px;
+    padding: 0%;
+    width: 300px;
+    height: 150px;
+    font-size: 40px;
+    margin: 0px 50px;
+    background-color: rgba(5, 86, 157);
+    border-radius: 20px;
+    border: solid rgb(240, 250, 250) 10px;
+    font-weight: bold;
+    color: rgb(240, 250, 250)
+}   
+
+.text {
+    margin-top: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 300px;
+    font-size: 24px;
+    padding: 20px;
+    margin-top: 20px;
+
+}
+
+ li {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: solid 6px rgb(0, 105, 88);
+    border: solid 6px rgb(5,87,157);
+    border-radius: 10px;
+    padding: 5px 20px;
+     border: solid;
+ }
+ul {
+    padding-left: 0px;
+}
+    
+button#reset {
+    display: flex;
+    margin: 100px 20px 40px auto;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    
+}

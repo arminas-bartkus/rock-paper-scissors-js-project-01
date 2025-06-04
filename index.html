@@ -6,7 +6,7 @@
     <title>Rock Paper Scissors</title>
 
     <script src="main-logic.js" defer></script>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -16,22 +16,20 @@
         <button id = "paper">Paper</button>
         <button id = "scissors">Scissors</button>
     </div>
+    <div class="text">
+        <div>LAST GAMES:</div>
+        <ul id = "scoreRecord"></ul>
     
-    <div id = >The current game score:</div>
+    
+        <div>Human Score: </div>
+        <div id = "humanScore"></div>     
+    
+        <div>Computer Score: </div>
+        <div id = "compScore"></div>
 
-    <ul id = "scoreRecord">
-        
-    </ul>
+        <div id = "winnerText"></div>
+    </div>
     
-    
-    <div>Human Score: </div>
-    <div id = "humanScore"></div>     
-    
-    <div>Computer Score: </div>
-    <div id = "compScore"></div>
-
-    <div id = "winnerText"></div>
-
 
     <button id = "reset">RESET</button>
 </body>
