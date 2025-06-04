@@ -37,6 +37,8 @@ let compScoreDiv = document.querySelector("#compScore")
 
 let winnerText = document.querySelector("#winnerText")
 
+const resetBtn = document.querySelector("#reset")
+
 btnContainer.addEventListener("click", function (event) {
 
     if (currentGame < maxGames) {
@@ -128,3 +130,15 @@ function playround(humanChoice, computerChoice) {
             }       
 
         }
+
+resetBtn.addEventListener("click", () => {
+    currentGame = 0;
+    humanScore = 0;
+    computerScore = 0;
+    humanWon = false;
+    scoreRecord.innerHTML = ""
+    winnerText.textContent = "";
+    humanScoreDiv.textContent = ""; 
+    compScoreDiv.textContent = "";   
+
+});
