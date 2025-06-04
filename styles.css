@@ -78,3 +78,7 @@ button#reset {
     justify-self: center;
     
 }
+
+button:hover {
+    background-color: rgba(5, 86, 157, 0.863);
+}
