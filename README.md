@@ -36,3 +36,16 @@ each function in each cycle.
 
 At the end a message a displayed,
 with the winners score and identifer!
+
+This project has now been updated. The repo now
+contains user interface elements so that 
+buttons can be pressed to select the human
+option. A reset button was added 
+to reset the game.Instead of the results 
+logging to the console. They now are displayed
+ on screen. Some basic CSS styling was also 
+ added. Please note that this website does not 
+ work as intended on all display types. Notably
+mobile devices. This is because I have not 
+covered these concepts in my learning 
+yet. Desktop should work fine though!
